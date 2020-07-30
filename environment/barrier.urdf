@@ -1,0 +1,28 @@
+<robot name="barrier">
+  <link name="box">
+    <inertial>
+      <origin xyz="0 0 0" /> 
+      <mass value="10.0" />
+      <inertia  ixx="1.0" ixy="0.0"  ixz="0.0"  iyy="1.0"  iyz="0.0"  izz="1.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="0.4 2.5 0.6" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"/>
+      <geometry>
+      <box size="0.4 2.5 0.6" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="empty"/>
+
+  <joint name="joint1" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="empty"/>
+    <child link="box"/>
+  </joint>
